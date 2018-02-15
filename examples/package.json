@@ -1,0 +1,13 @@
+{
+  "name": "pesdk-server-examples",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PhotoEditor SDK <contact@photoeditorsdk.com>",
+  "license": "ISC",
+  "dependencies": {
+    "microtime": "^2.1.7",
+    "photoeditorsdk-server": "file:../"
+  }
+}
