@@ -1,6 +1,7 @@
 /* global editorConfig, dat */
 window.addEventListener('load', function () {
   var gui = new dat.GUI({ closeOnTop: true, autoPlace: true })
+  var dataFolder = gui.addFolder('Data')
   var uiFolder = gui.addFolder('UI')
   var sdkFolder = gui.addFolder('General')
   var editorFolder = gui.addFolder('Editor')
@@ -10,6 +11,9 @@ window.addEventListener('load', function () {
   gui.domElement.parentNode.style.zIndex = 1000
 
   var controllers = []
+  controllers.push(dataFolder.add(editorConfig, 'data.imageSrc'))
+  controllers.push(dataFolder.add(editorConfig, 'data.watermarkImageSrc'))
+
   controllers.push(uiFolder.add(editorConfig, 'ui.type', ['desktopui', 'reactui']))
   controllers.push(uiFolder.add(editorConfig, 'ui.layout', ['advanced']))
   controllers.push(uiFolder.add(editorConfig, 'ui.theme', ['dark']))
@@ -32,7 +36,12 @@ window.addEventListener('load', function () {
   controllers.push(editorFolder.add(editorConfig, 'editor.zoom', [0.5, 1.0, 1.5, 2.0]))
   controllers.push(editorFolder.add(editorConfig, 'editor.pixelRatio', [1, 2, 4]))
   controllers.push(editorFolder.add(editorConfig, 'editor.renderMode', ['dynamic', 'export']))
+  // controllers.push(editorFolder.add(editorConfig, 'editor.tools'))
+  // controllers.push(editorFolder.add(editorConfig, 'editor.controlsOrder'))
   controllers.push(editorFolder.add(editorConfig, 'editor.photoroll'))
+  controllers.push(editorFolder.add(editorConfig, 'editor.export.format'))
+  controllers.push(editorFolder.add(editorConfig, 'editor.export.fileBasename'))
+
   // controllers.push(editorFolder.add(editorConfig, 'library', ['unsplash', 'example']))
 
   controllers.forEach(function (controller) {

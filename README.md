@@ -2,12 +2,6 @@
   <img src="http://static.photoeditorsdk.com/logo.png" alt="PhotoEditor SDK Logo"/>
 </p>
 
-<p align="center">
-  <a href="https://pesdk-slack.herokuapp.com/">
-    <img src="https://pesdk-slack.herokuapp.com/badge.svg" alt="Slack Status" />
-  </a>
-</p>
-
 ## PhotoEditor SDK for the Server/NodeJS
 The PhotoEditor SDK for Server is a **fully customizable** photo editor which you can integrate into your NodeJS application within minutes.
 It contains the most important photo editing tools such as;

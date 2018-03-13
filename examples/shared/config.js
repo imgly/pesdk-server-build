@@ -24,25 +24,34 @@ JSON.flatten = function (data) {
   return result
 }
 
-JSON.unflatten = function(data) {
-  "use strict";
-  if (Object(data) !== data || Array.isArray(data))
-      return data;
-  var result = {}, cur, prop, parts, idx;
-  for(var p in data) {
-      cur = result, prop = "";
-      parts = p.split(".");
-      for(var i=0; i<parts.length; i++) {
-          idx = !isNaN(parseInt(parts[i]));
-          cur = cur[prop] || (cur[prop] = (idx ? [] : {}));
-          prop = parts[i];
-      }
-      cur[prop] = data[p];
+JSON.unflatten = function (data) {
+  if (Object(data) !== data || Array.isArray(data)) {
+    return data
   }
-  return result[""];
+  var result = {}
+  var cur
+  var prop
+  var parts
+  var idx
+  for (var p in data) {
+    cur = result
+    prop = ''
+    parts = p.split('.')
+    for (var i = 0; i < parts.length; i++) {
+      idx = !isNaN(parseInt(parts[i]))
+      cur = cur[prop] || (cur[prop] = (idx ? [] : {}))
+      prop = parts[i]
+    }
+    cur[prop] = data[p]
+  }
+  return result['']
 }
 
 window.editorConfig = JSON.flatten({
+  data: {
+    imageSrc: '../shared/assets/example.jpg',
+    watermarkImageSrc: ''
+  },
   ui: {
     type: 'desktopui',
     theme: 'dark',
@@ -55,7 +64,7 @@ window.editorConfig = JSON.flatten({
   preloader: false,
   responsive: true,
   assets: {
-    baseUrl: '../../photoeditorsdk/assets'
+    baseUrl: '../../assets'
   },
   // editor configuration
   editor: {
@@ -75,8 +84,15 @@ window.editorConfig = JSON.flatten({
       fileBasename: 'photoeditorsdk_download',
       format: 'image/jpeg'
     },
-    controlsOptions: {
-    }
+    tools: [
+      'transform', 'filter', 'adjustments', 'focus', 'text', 'sticker', 'brush', 'frame', 'overlay', 'library'
+    ],
+    controlsOrder: [
+      ['library'],
+      ['transform', 'filter', 'adjustments', 'focus'],
+      ['text', 'sticker', 'brush', 'frame', 'overlay']
+    ],
+    controlsOptions: {}
   }
 })
 
