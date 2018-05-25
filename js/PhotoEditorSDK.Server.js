@@ -1277,7 +1277,7 @@ var Utils = function () {
      * Get a deep property inside an object.
      *
      * @param {Object} object - the object
-     * @param {(String|(String|Function)[])} path - Either a string with the prop's
+     * @param {String[]} path - Either a string with the prop's
      *  name, or an array of prop names and/or functions describing a path in a
      *  nested object. Any function passed in the array should function as a getter
      *  for a prop.
@@ -13551,7 +13551,7 @@ var OperationsStack = function (_EventEmitter) {
 /* 124 */
 /***/ (function(module, exports) {
 
-module.exports = {"name":"photoeditorsdk","version":"4.5.0","description":"The most comprehensive photo editor SDK for HTML5","repository":"http://github.com/imgly/pesdk-html5","author":"PhotoEditorSDK (9elements GmbH) <contact@photoeditorsdk.com>","license":"SEE LICENSE IN LICENSE.md","bin":{},"scripts":{"start":"npm run watch","release":"cross-env PESDK_CLEAN=true PESDK_ASSETS=true PESDK_RELEASE=true webpack --progress --colors && cross-env npm run prerender-desktop-css && rimraf build/examples/qa-* && rimraf build/examples/ci-* && rimraf build/**/dev.*","release:production":"cross-env ENV=production npm run release && rm -rf build/examples/shared","release:test":"cross-env ENV=test PESDK_CLEAN=true PESDK_ASSETS=true webpack && npm run prerender-desktop-css","release:development":"cross-env ENV=development PESDK_CLEAN=true PESDK_ASSETS=true npm run release","lint":"eslint --ext .jsx,.js src/js","lint:test":"eslint --ext .jsx,.js test","lint:sdk":"eslint --ext .jsx,.js src/js/sdk","lint:ui":"eslint --ext .jsx,.js src/js/ui","lint:ui:react-ui":"eslint --ext .jsx,.js src/js/ui/react-ui","lint:ui:desktop-ui":"eslint --ext .jsx,.js src/js/ui/desktop-ui","build":"cross-env PESDK_CLEAN=true PESDK_ASSETS=true webpack","rebuild":"cross-env PESDK_ASSETS=true webpack --progress --color","clean":"rimraf build/* doc/* dist/*","watch":"cross-env PESDK_CLEAN=true PESDK_ASSETS=true PESDK_SERVE=true webpack --watch --progress --colors","watch:test":"cross-env PESDK_CLEAN=true PESDK_ASSETS=true ENV=test webpack --watch --progress --colors","watch:production":"cross-env PESDK_CLEAN=true PESDK_ASSETS=true PESDK_SERVE=true webpack --watch --progress --colors","test":"npm run test:sdk && npm run test:ui && npm run test:ui:react-ui && npm run test:desktop-ui && npm run server","test:ui":"cross-env ENV=test node_modules/.bin/mocha --require test/sdk/support/modules --require test/sdk/support/helpers test/ui","test:sdk":"cross-env ENV=test node_modules/.bin/mocha --require test/sdk/support/modules --require test/sdk/support/helpers test/sdk","test:ui:react-ui":"cross-env ENV=test node --stack-size=65500 node_modules/.bin/mocha --require test/react-ui/support/helpers test/shared/run-server.js \"test/react-ui/*.test.js\" \"test/react-ui/**/*.test.js\"","test:ui:desktop-ui":"cross-env ENV=test node --stack-size=65500  node_modules/.bin/mocha --require test/desktop-ui/support/helpers test/shared/run-server.js \"test/desktop-ui/*.test.js\" \"test/desktop-ui/**/*.test.js\"","test:server":"cross-env ENV=test node --stack-size=65500 node_modules/.bin/mocha --require test/sdk/support/modules --require test/server/support/helpers test/shared/run-server.js \"test/server/*.test.js\" \"test/server/**/*.test.js\"","test:comparison":"cross-env ENV=test node --stack-size=65500 node_modules/.bin/mocha --require test/sdk/support/modules --require test/comparison/support/helpers \"test/comparison/*.test.js\" \"test/comparison/**/*.test.js\"","test:webgl":"cross-env RENDERER=webgl ENV=test node_modules/.bin/mocha --require test/sdk/support/modules --require test/sdk/support/helpers test/sdk","jsdoc":"rimraf doc/photoeditorsdk && jsdoc -c config/jsdoc/jsdoc.json -r","jsdoc:server":"rimraf doc/photoeditorsdk-server && jsdoc -c config/jsdoc/jsdoc.server.json -r","render-filter-previews":"node scripts/run render-filter-previews","prerender-desktop-css":"node scripts/run render-desktop-ui-css","dist:sdk":"rimraf dist/photoeditorsdk && cp -r build/photoeditorsdk/ dist/photoeditorsdk && find dist/photoeditorsdk -d 2 -name '*.min.*'  | sed 'p;s/.min././' | xargs -n2 cp && npm run jsdoc","dist:server":"rimraf dist/photoeditorsdk-server && cp -r build/photoeditorsdk-server/ dist/photoeditorsdk-server && find dist/photoeditorsdk-server -d 2 -name '*.min.*'  | sed 's/.min././' | xargs -n1 rm && npm run jsdoc:server","precommit":"true","prepush":"npm run lint"},"devDependencies":{"adonis":"git://github.com/imgly/adonis.git#v1.0.1","ajv":"^5.5.1","babel-core":"^6.26.0","babel-eslint":"^8.2.1","babel-loader":"^7.1.2","babel-minify-webpack-plugin":"^0.2.0","babel-plugin-external-helpers":"^6.22.0","babel-plugin-transform-adonis-hash":"^0.4.0","babel-plugin-transform-class-properties":"^6.19.0","babel-plugin-transform-es2015-classes":"^6.6.4","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-plugin-transform-proto-to-assign":"^6.26.0","babel-plugin-transform-runtime":"^6.6.0","babel-preset-env":"^1.6.1","babel-preset-es2015":"^6.6.0","babel-preset-minify":"^0.2.0","babel-preset-react":"^6.5.0","babel-preset-stage-3":"^6.24.1","babel-register":"^6.26.0","babel-runtime":"^6.26.0","chai":"^3.4.0","chai-as-promised":"^5.1.0","chromedriver":"^2.33.2","classnames":"^2.1.3","clean-webpack-plugin":"^0.1.16","compass-mixins":"^0.12.8","copy-webpack-plugin":"^4.3.0","cross-env":"^5.1.1","css-loader":"^0.28.7","del":"^2.0.0","djv":"^1.2.0","eslint":"^4.16.0","eslint-config-standard":"^11.0.0","eslint-plugin-import":"^2.10.0","eslint-plugin-mocha":"^5.0.0","eslint-plugin-node":"^6.0.1","eslint-plugin-promise":"^3.7.0","eslint-plugin-standard":"^3.0.1","express":"^4.16.2","extract-text-webpack-plugin":"^3.0.2","husky":"^0.14.3","inquirer":"^0.11.4","inquirer-path":"^1.0.0-beta5","isomorphic-fetch":"^2.2.1","jaguarjs-jsdoc":"git://github.com/imgly/jaguarjs-jsdoc.git#master","jsdoc":"^3.5.5","json-loader":"^0.5.7","lodash":"^4.17.4","minimist":"^1.2.0","mkdirp":"^0.5.1","mocha":"^3.5.3","nightwatch":"git://github.com/imgly/nightwatch.git#feature/file-upload-and-multiple-selectors","node-sass":"^4.7.2","node-static":"^0.7.10","optimize-css-assets-webpack-plugin":"^3.2.0","performance-now":"^0.2.0","pixelmatch":"^4.0.2","pngjs":"^3.3.2","preprocess-loader":"^0.2.2","pretty-error":"^2.0.0","prompt":"^1.0.0","prop-types":"^15.6.0","raw-loader":"^0.5.1","react":"^16.2.0","react-dom":"^16.2.0","rembrandt":"^0.1.3","rimraf":"^2.6.2","sass-loader":"^6.0.6","selenium-server-standalone-jar":"3.4.0","should":"^4.3.0","sinon":"^1.17.3","sinon-chai":"^2.14.0","standard":"^9.0.2","standard-loader":"^6.0.1","stats.js":"^0.16.0","style-loader":"^0.13.1","term-img2":"^2.0.1","transform-loader":"^0.2.2","uglifyjs-webpack-plugin":"^0.4.6","vinyl-source-stream":"0.1.1","webpack":"^3.10.0","webpack-notifier":"^1.2.1"},"standard":{"globals":["describe","context","before","beforeEach","after","afterEach","it","expect"],"parser":"babel-eslint"},"dependencies":{"canvas":"git://github.com/imgly/node-canvas.git#v2.0.0-alpha.9","gl":"^4.0.4","request":"^2.83.0"}}
+module.exports = {"name":"photoeditorsdk","version":"4.6.0","description":"The most comprehensive photo editor SDK for HTML5","repository":"http://github.com/imgly/pesdk-html5","author":"PhotoEditorSDK (9elements GmbH) <contact@photoeditorsdk.com>","license":"SEE LICENSE IN LICENSE.md","bin":{},"scripts":{"start":"npm run watch","release":"cross-env PESDK_CLEAN=true PESDK_ASSETS=true PESDK_RELEASE=true webpack --progress --colors && cross-env npm run prerender-desktop-css && rimraf build/examples/qa-* && rimraf build/examples/ci-* && rimraf build/**/dev.*","release:production":"cross-env ENV=production npm run release && rm -rf build/examples/shared","release:test":"cross-env ENV=test PESDK_CLEAN=true PESDK_ASSETS=true webpack && npm run prerender-desktop-css","release:development":"cross-env ENV=development PESDK_CLEAN=true PESDK_ASSETS=true npm run release","lint":"eslint --ext .jsx,.js src/js","lint:test":"eslint --ext .jsx,.js test","lint:sdk":"eslint --ext .jsx,.js src/js/sdk","lint:ui":"eslint --ext .jsx,.js src/js/ui","lint:ui:react-ui":"eslint --ext .jsx,.js src/js/ui/react-ui","lint:ui:desktop-ui":"eslint --ext .jsx,.js src/js/ui/desktop-ui","build":"cross-env PESDK_CLEAN=true PESDK_ASSETS=true webpack","rebuild":"cross-env PESDK_ASSETS=true webpack --progress --color","clean":"rimraf build/* doc/* dist/*","watch":"cross-env PESDK_CLEAN=true PESDK_ASSETS=true PESDK_SERVE=true webpack --watch --progress --colors","watch:test":"cross-env PESDK_CLEAN=true PESDK_ASSETS=true ENV=test webpack --watch --progress --colors","watch:production":"cross-env PESDK_CLEAN=true PESDK_ASSETS=true PESDK_SERVE=true webpack --watch --progress --colors","test":"npm run test:sdk && npm run test:ui && npm run test:ui:react-ui && npm run test:desktop-ui && npm run server","test:ui":"cross-env ENV=test node_modules/.bin/mocha --require test/sdk/support/modules --require test/sdk/support/helpers test/ui","test:sdk":"cross-env ENV=test node_modules/.bin/mocha --require test/sdk/support/modules --require test/sdk/support/helpers test/sdk","test:ui:react-ui":"cross-env ENV=test node --stack-size=65500 node_modules/.bin/mocha --require test/react-ui/support/helpers test/shared/run-server.js \"test/react-ui/*.test.js\" \"test/react-ui/**/*.test.js\"","test:ui:desktop-ui":"cross-env ENV=test node --stack-size=65500  node_modules/.bin/mocha --require test/desktop-ui/support/helpers test/shared/run-server.js \"test/desktop-ui/*.test.js\" \"test/desktop-ui/**/*.test.js\"","test:server":"cross-env ENV=test node --stack-size=65500 node_modules/.bin/mocha --require test/sdk/support/modules --require test/server/support/helpers test/shared/run-server.js \"test/server/*.test.js\" \"test/server/**/*.test.js\"","test:comparison":"cross-env ENV=test node --stack-size=65500 node_modules/.bin/mocha --require test/sdk/support/modules --require test/comparison/support/helpers \"test/comparison/*.test.js\" \"test/comparison/**/*.test.js\"","test:webgl":"cross-env RENDERER=webgl ENV=test node_modules/.bin/mocha --require test/sdk/support/modules --require test/sdk/support/helpers test/sdk","jsdoc":"rimraf doc/photoeditorsdk && jsdoc -c config/jsdoc/jsdoc.json -r","jsdoc:server":"rimraf doc/photoeditorsdk-server && jsdoc -c config/jsdoc/jsdoc.server.json -r","render-filter-previews":"node scripts/run render-filter-previews","prerender-desktop-css":"node scripts/run render-desktop-ui-css","dist:sdk":"rimraf dist/photoeditorsdk && cp -r build/photoeditorsdk/ dist/photoeditorsdk && find dist/photoeditorsdk -d 2 -name '*.min.*'  | sed 'p;s/.min././' | xargs -n2 cp && npm run jsdoc","dist:server":"rimraf dist/photoeditorsdk-server && cp -r build/photoeditorsdk-server/ dist/photoeditorsdk-server && find dist/photoeditorsdk-server -d 2 -name '*.min.*'  | sed 's/.min././' | xargs -n1 rm && npm run jsdoc:server","precommit":"true","prepush":"npm run lint"},"devDependencies":{"adonis":"git://github.com/imgly/adonis.git#v1.0.1","ajv":"^5.5.1","babel-core":"^6.26.0","babel-eslint":"^8.2.1","babel-loader":"^7.1.2","babel-minify-webpack-plugin":"^0.2.0","babel-plugin-external-helpers":"^6.22.0","babel-plugin-transform-adonis-hash":"^0.4.0","babel-plugin-transform-class-properties":"^6.19.0","babel-plugin-transform-es2015-classes":"^6.6.4","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-plugin-transform-proto-to-assign":"^6.26.0","babel-plugin-transform-runtime":"^6.6.0","babel-preset-env":"^1.6.1","babel-preset-es2015":"^6.6.0","babel-preset-minify":"^0.2.0","babel-preset-react":"^6.5.0","babel-preset-stage-3":"^6.24.1","babel-register":"^6.26.0","babel-runtime":"^6.26.0","chai":"^3.4.0","chai-as-promised":"^5.1.0","chromedriver":"^2.37.0","classnames":"^2.1.3","clean-webpack-plugin":"^0.1.16","compass-mixins":"^0.12.8","copy-webpack-plugin":"^4.3.0","cross-env":"^5.1.1","css-loader":"^0.28.7","del":"^2.0.0","djv":"^1.2.0","eslint":"^4.16.0","eslint-config-standard":"^11.0.0","eslint-plugin-import":"^2.10.0","eslint-plugin-mocha":"^5.0.0","eslint-plugin-node":"^6.0.1","eslint-plugin-promise":"^3.7.0","eslint-plugin-standard":"^3.0.1","express":"^4.16.2","extract-text-webpack-plugin":"^3.0.2","husky":"^0.14.3","inquirer":"^0.11.4","inquirer-path":"^1.0.0-beta5","isomorphic-fetch":"^2.2.1","jaguarjs-jsdoc":"git://github.com/imgly/jaguarjs-jsdoc.git#master","jsdoc":"^3.5.5","json-loader":"^0.5.7","lodash":"^4.17.4","minimist":"^1.2.0","mkdirp":"^0.5.1","mocha":"^3.5.3","nightwatch":"git://github.com/imgly/nightwatch.git#feature/file-upload-and-multiple-selectors","node-sass":"^4.7.2","node-static":"^0.7.10","optimize-css-assets-webpack-plugin":"^3.2.0","performance-now":"^0.2.0","pixelmatch":"^4.0.2","pngjs":"^3.3.2","preprocess-loader":"^0.2.2","pretty-error":"^2.0.0","prompt":"^1.0.0","prop-types":"^15.6.0","raw-loader":"^0.5.1","react":"^16.2.0","react-dom":"^16.2.0","rembrandt":"^0.1.3","rimraf":"^2.6.2","sass-loader":"^6.0.6","selenium-server-standalone-jar":"3.4.0","should":"^4.3.0","sinon":"^1.17.3","sinon-chai":"^2.14.0","standard":"^9.0.2","standard-loader":"^6.0.1","stats.js":"^0.16.0","style-loader":"^0.13.1","term-img2":"^2.0.1","transform-loader":"^0.2.2","uglifyjs-webpack-plugin":"^0.4.6","vinyl-source-stream":"0.1.1","webpack":"^3.10.0","webpack-notifier":"^1.2.1"},"standard":{"globals":["describe","context","before","beforeEach","after","afterEach","it","expect"],"parser":"babel-eslint"},"dependencies":{"canvas":"git://github.com/imgly/node-canvas.git#v2.0.0-alpha.9","gl":"^4.0.4","request":"^2.83.0"}}
 
 /***/ }),
 /* 125 */
@@ -15486,8 +15486,8 @@ Brush.prototype.availableOptions = {
           },
           mediaBase: {
             uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_alien.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_alien.png'],
-            width: 62,
-            height: 58
+            width: 1000,
+            height: 935
           }
         }
       }, {
@@ -15500,9 +15500,7 @@ Brush.prototype.availableOptions = {
             height: 64
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_angel.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_angel.png'],
-            width: 62,
-            height: 64
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_angel.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_angel.png']
           }
         }
       }, {
@@ -15515,9 +15513,7 @@ Brush.prototype.availableOptions = {
             height: 62
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_angry.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_angry.png'],
-            width: 62,
-            height: 62
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_angry.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_angry.png']
           }
         }
       }, {
@@ -15530,9 +15526,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_anxious.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_anxious.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_anxious.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_anxious.png']
           }
         }
       }, {
@@ -15545,9 +15539,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_asleep.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_asleep.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_asleep.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_asleep.png']
           }
         }
       }, {
@@ -15560,9 +15552,7 @@ Brush.prototype.availableOptions = {
             height: 60
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_attention.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_attention.png'],
-            width: 62,
-            height: 60
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_attention.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_attention.png']
           }
         }
       }, {
@@ -15575,9 +15565,7 @@ Brush.prototype.availableOptions = {
             height: 42
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_baby_chicken.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_baby_chicken.png'],
-            width: 61,
-            height: 42
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_baby_chicken.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_baby_chicken.png']
           }
         }
       }, {
@@ -15590,9 +15578,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_batman.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_batman.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_batman.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_batman.png']
           }
         }
       }, {
@@ -15605,9 +15591,7 @@ Brush.prototype.availableOptions = {
             height: 59
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_beer.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_beer.png'],
-            width: 62,
-            height: 59
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_beer.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_beer.png']
           }
         }
       }, {
@@ -15620,9 +15604,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_blush.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_blush.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_blush.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_blush.png']
           }
         }
       }, {
@@ -15635,9 +15617,7 @@ Brush.prototype.availableOptions = {
             height: 62
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_boxer.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_boxer.png'],
-            width: 62,
-            height: 62
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_boxer.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_boxer.png']
           }
         }
       }, {
@@ -15650,9 +15630,7 @@ Brush.prototype.availableOptions = {
             height: 63
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_business.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_business.png'],
-            width: 60,
-            height: 63
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_business.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_business.png']
           }
         }
       }, {
@@ -15665,9 +15643,7 @@ Brush.prototype.availableOptions = {
             height: 55
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_chicken.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_chicken.png'],
-            width: 63,
-            height: 55
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_chicken.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_chicken.png']
           }
         }
       }, {
@@ -15680,9 +15656,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_cool.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_cool.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_cool.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_cool.png']
           }
         }
       }, {
@@ -15695,9 +15669,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_cry.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_cry.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_cry.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_cry.png']
           }
         }
       }, {
@@ -15710,9 +15682,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_deceased.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_deceased.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_deceased.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_deceased.png']
           }
         }
       }, {
@@ -15725,9 +15695,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_devil.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_devil.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_devil.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_devil.png']
           }
         }
       }, {
@@ -15740,9 +15708,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_duckface.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_duckface.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_duckface.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_duckface.png']
           }
         }
       }, {
@@ -15755,9 +15721,7 @@ Brush.prototype.availableOptions = {
             height: 61
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_furious.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_furious.png'],
-            width: 62,
-            height: 61
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_furious.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_furious.png']
           }
         }
       }, {
@@ -15770,9 +15734,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_grin.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_grin.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_grin.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_grin.png']
           }
         }
       }, {
@@ -15785,9 +15747,7 @@ Brush.prototype.availableOptions = {
             height: 60
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_guitar.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_guitar.png'],
-            width: 64,
-            height: 60
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_guitar.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_guitar.png']
           }
         }
       }, {
@@ -15800,9 +15760,7 @@ Brush.prototype.availableOptions = {
             height: 62
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_harry_potter.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_harry_potter.png'],
-            width: 64,
-            height: 62
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_harry_potter.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_harry_potter.png']
           }
         }
       }, {
@@ -15815,9 +15773,7 @@ Brush.prototype.availableOptions = {
             height: 62
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_hippie.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_hippie.png'],
-            width: 62,
-            height: 62
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_hippie.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_hippie.png']
           }
         }
       }, {
@@ -15830,9 +15786,7 @@ Brush.prototype.availableOptions = {
             height: 60
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_hitman.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_hitman.png'],
-            width: 64,
-            height: 60
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_hitman.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_hitman.png']
           }
         }
       }, {
@@ -15845,9 +15799,7 @@ Brush.prototype.availableOptions = {
             height: 64
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_humourous.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_humourous.png'],
-            width: 64,
-            height: 64
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_humourous.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_humourous.png']
           }
         }
       }, {
@@ -15860,9 +15812,7 @@ Brush.prototype.availableOptions = {
             height: 62
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_idea.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_idea.png'],
-            width: 64,
-            height: 62
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_idea.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_idea.png']
           }
         }
       }, {
@@ -15875,9 +15825,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_impatient.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_impatient.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_impatient.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_impatient.png']
           }
         }
       }, {
@@ -15890,9 +15838,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_kiss.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_kiss.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_kiss.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_kiss.png']
           }
         }
       }, {
@@ -15905,9 +15851,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_kisses.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_kisses.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_kisses.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_kisses.png']
           }
         }
       }, {
@@ -15920,9 +15864,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_laugh.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_laugh.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_laugh.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_laugh.png']
           }
         }
       }, {
@@ -15935,9 +15877,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_loud_cry.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_loud_cry.png'],
-            width: 64,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_loud_cry.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_loud_cry.png']
           }
         }
       }, {
@@ -15950,9 +15890,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_loving.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_loving.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_loving.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_loving.png']
           }
         }
       }, {
@@ -15965,9 +15903,7 @@ Brush.prototype.availableOptions = {
             height: 62
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_masked.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_masked.png'],
-            width: 62,
-            height: 62
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_masked.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_masked.png']
           }
         }
       }, {
@@ -15980,9 +15916,7 @@ Brush.prototype.availableOptions = {
             height: 54
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_music.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_music.png'],
-            width: 62,
-            height: 54
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_music.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_music.png']
           }
         }
       }, {
@@ -15990,14 +15924,10 @@ Brush.prototype.availableOptions = {
         defaultName: 'Nerd',
         images: {
           mediaThumb: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_nerd.svg', 'stickers/emoticons/stickers/thumbs/imgly_sticker_emoticons_nerd.png'],
-            width: 64,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_nerd.svg', 'stickers/emoticons/stickers/thumbs/imgly_sticker_emoticons_nerd.png']
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_nerd.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_nerd.png'],
-            width: 64,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_nerd.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_nerd.png']
           }
         }
       }, {
@@ -16010,9 +15940,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_ninja.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_ninja.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_ninja.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_ninja.png']
           }
         }
       }, {
@@ -16025,9 +15953,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_not_speaking_to_you.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_not_speaking_to_you.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_not_speaking_to_you.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_not_speaking_to_you.png']
           }
         }
       }, {
@@ -16040,9 +15966,7 @@ Brush.prototype.availableOptions = {
             height: 41
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_pig.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_pig.png'],
-            width: 63,
-            height: 41
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_pig.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_pig.png']
           }
         }
       }, {
@@ -16055,9 +15979,7 @@ Brush.prototype.availableOptions = {
             height: 60
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_pumpkin.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_pumpkin.png'],
-            width: 62,
-            height: 60
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_pumpkin.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_pumpkin.png']
           }
         }
       }, {
@@ -16070,9 +15992,7 @@ Brush.prototype.availableOptions = {
             height: 62
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_question.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_question.png'],
-            width: 62,
-            height: 62
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_question.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_question.png']
           }
         }
       }, {
@@ -16085,9 +16005,7 @@ Brush.prototype.availableOptions = {
             height: 47
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_rabbit.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_rabbit.png'],
-            width: 65,
-            height: 47
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_rabbit.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_rabbit.png']
           }
         }
       }, {
@@ -16095,14 +16013,10 @@ Brush.prototype.availableOptions = {
         defaultName: 'Sad',
         images: {
           mediaThumb: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_sad.svg', 'stickers/emoticons/stickers/thumbs/imgly_sticker_emoticons_sad.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_sad.svg', 'stickers/emoticons/stickers/thumbs/imgly_sticker_emoticons_sad.png']
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_sad.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_sad.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_sad.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_sad.png']
           }
         }
       }, {
@@ -16115,9 +16029,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_sick.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_sick.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_sick.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_sick.png']
           }
         }
       }, {
@@ -16130,9 +16042,7 @@ Brush.prototype.availableOptions = {
             height: 64
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_skateboard.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_skateboard.png'],
-            width: 62,
-            height: 64
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_skateboard.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_skateboard.png']
           }
         }
       }, {
@@ -16145,9 +16055,7 @@ Brush.prototype.availableOptions = {
             height: 62
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_skull.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_skull.png'],
-            width: 62,
-            height: 62
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_skull.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_skull.png']
           }
         }
       }, {
@@ -16160,9 +16068,7 @@ Brush.prototype.availableOptions = {
             height: 60
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_sleepy.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_sleepy.png'],
-            width: 62,
-            height: 60
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_sleepy.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_sleepy.png']
           }
         }
       }, {
@@ -16175,9 +16081,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_smile.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_smile.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_smile.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_smile.png']
           }
         }
       }, {
@@ -16190,9 +16094,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_smoking.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_smoking.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_smoking.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_smoking.png']
           }
         }
       }, {
@@ -16205,9 +16107,7 @@ Brush.prototype.availableOptions = {
             height: 59
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_sobbing.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_sobbing.png'],
-            width: 62,
-            height: 59
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_sobbing.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_sobbing.png']
           }
         }
       }, {
@@ -16220,9 +16120,7 @@ Brush.prototype.availableOptions = {
             height: 64
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_star.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_star.png'],
-            width: 64,
-            height: 64
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_star.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_star.png']
           }
         }
       }, {
@@ -16235,9 +16133,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_steaming_furious.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_steaming_furious.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_steaming_furious.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_steaming_furious.png']
           }
         }
       }, {
@@ -16250,9 +16146,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_sunbathing.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_sunbathing.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_sunbathing.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_sunbathing.png']
           }
         }
       }, {
@@ -16265,9 +16159,7 @@ Brush.prototype.availableOptions = {
             height: 60
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_tired.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_tired.png'],
-            width: 62,
-            height: 60
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_tired.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_tired.png']
           }
         }
       }, {
@@ -16280,9 +16172,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_tongue_out_wink.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_tongue_out_wink.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_tongue_out_wink.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_tongue_out_wink.png']
           }
         }
       }, {
@@ -16295,9 +16185,7 @@ Brush.prototype.availableOptions = {
             height: 60
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_wave.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_wave.png'],
-            width: 62,
-            height: 60
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_wave.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_wave.png']
           }
         }
       }, {
@@ -16310,9 +16198,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_wide_grin.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_wide_grin.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_wide_grin.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_wide_grin.png']
           }
         }
       }, {
@@ -16325,9 +16211,7 @@ Brush.prototype.availableOptions = {
             height: 58
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_wink.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_wink.png'],
-            width: 62,
-            height: 58
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_wink.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_wink.png']
           }
         }
       }, {
@@ -16340,9 +16224,7 @@ Brush.prototype.availableOptions = {
             height: 60
           },
           mediaBase: {
-            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_wrestler.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_wrestler.png'],
-            width: 62,
-            height: 60
+            uris: ['stickers/emoticons/stickers/imgly_sticker_emoticons_wrestler.svg', 'stickers/emoticons/stickers/base/imgly_sticker_emoticons_wrestler.png']
           }
         }
       }]
@@ -20934,6 +20816,7 @@ var PhotoEditorSDK = function (_EventEmitter) {
       }
       this._inputTexture = new Engine.Texture(baseTexture, frame);
       this._currentTexture = this._inputTexture;
+      this._sprite.clearTexture();
       this._sprite.setTexture(this._inputTexture);
 
       this.setAllOperationsToDirty(true);
@@ -24772,6 +24655,22 @@ var Sprite = function (_Container) {
     value: function getTexture() {
       return this._texture;
     }
+  }, {
+    key: 'clearTexture',
+    value: function clearTexture() {
+      if (!this._texture) {
+        return;
+      }
+
+      this._texture.off('update', this._onTextureUpdate);
+      this._texture.dispose();
+      this._texture = null;
+
+      if (this._potRenderer) {
+        this._potRenderer.dispose();
+        this._potRenderer = null;
+      }
+    }
 
     /**
      * Sets the texture
@@ -25077,6 +24976,10 @@ var POTRenderer = function () {
   }, {
     key: 'dispose',
     value: function dispose() {
+      if (!this._renderTexture) {
+        return;
+      }
+
       this._renderTexture.dispose();
       this._renderTexture = null;
     }
@@ -40034,6 +39937,8 @@ var SpriteOperation = function (_Operation) {
 
     var _this = _possibleConstructorReturn(this, (_ref = SpriteOperation.__proto__ || __WEBPACK_IMPORTED_MODULE_5_babel_runtime_core_js_object_get_prototype_of___default()(SpriteOperation)).call.apply(_ref, [this].concat(args)));
 
+    _this.setSmoothDownscaling(_this._sdk.getOptions().smoothDownscaling);
+
     _this._onSpriteUpdate = _this._onSpriteUpdate.bind(_this);
 
     var sprites = _this._options.sprites.slice();
@@ -40212,6 +40117,10 @@ var SpriteOperation = function (_Operation) {
     key: 'addSprite',
     value: function addSprite(sprite) {
       this._options.sprites.push(sprite);
+
+      var smoothDownscaling = this.getSmoothDownscaling();
+      sprite.setSmoothDownscaling && sprite.setSmoothDownscaling(smoothDownscaling);
+
       this._container.addChild(sprite.getDisplayObject());
 
       // This operation needs to be rerendered
@@ -40439,7 +40348,8 @@ SpriteOperation.prototype.availableOptions = {
 
       return sprites;
     }
-  }
+  },
+  smoothDownscaling: { type: __WEBPACK_IMPORTED_MODULE_6_photoeditorsdk_core__["OptionType"].BOOLEAN, default: false }
 };
 
 __WEBPACK_IMPORTED_MODULE_6_photoeditorsdk_core___default.a.Operations.SpriteOperation = SpriteOperation;
@@ -40535,6 +40445,7 @@ var StickerSprite = function (_Sprite) {
     if (_this._isSVG) {
       _this._canvas = __WEBPACK_IMPORTED_MODULE_5_photoeditorsdk_core__["Utils"].createCanvas();
       _this._context = _this._canvas.getContext('2d');
+      _this._options.smoothDownscaling = false;
     }
 
     if (image) {
@@ -40624,21 +40535,13 @@ var StickerSprite = function (_Sprite) {
         dimensions.set(image.width, image.height);
       }
 
+      this._sprite.setSmoothDownscaling(this._isSVG ? false : this.getSmoothDownscaling());
+
       var isDirty = !this._lastRenderedInputDimensions.equals(inputDimensions) || !this._lastRenderedDimensions.equals(dimensions) || this._lastRenderedImage !== image;
 
       if (isDirty && this._isSVG && sdk.getRenderer().isOfType(__WEBPACK_IMPORTED_MODULE_5_photoeditorsdk_core__["RendererType"].WEBGL)) {
-        // Dimensions have changed - in case of an SVG, we need to re-upload the
-        // image to the GPU using the new dimensions.
-        // We are also limiting the texture size to a rectangle that fits inside the output image.
-        var outputDimensions = sdk.getOutputDimensions();
-        if (dimensions.x > outputDimensions.x || dimensions.y > outputDimensions.y) {
-          var resizedDimensions = __WEBPACK_IMPORTED_MODULE_5_photoeditorsdk_core__["Utils"].resizeVectorToFit(dimensions, outputDimensions);
-          image.width = resizedDimensions.x;
-          image.height = resizedDimensions.y;
-        } else {
-          image.width = dimensions.x;
-          image.height = dimensions.y;
-        }
+        image.width = dimensions.x;
+        image.height = dimensions.y;
 
         // Workaround for Chromium Bug, still present in Safari
         // https://bugs.chromium.org/p/chromium/issues/detail?id=500180
