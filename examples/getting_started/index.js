@@ -16,7 +16,7 @@ const pesdkServer = new PesdkServer({
 
 // example that converts the image to black and white
 const configuration = {
-  'version': '3.0.0',
+  'version': '3.1.0',
   'operations': [
     {
       'type': 'filter',
