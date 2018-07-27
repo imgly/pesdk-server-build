@@ -25,20 +25,24 @@ const configuration = {
         'identifier': 'imgly_lut_bw'
       }
     }
-  ]
+  ],
+  'image': {
+    'width': 1920,
+    'height': 1280
+  }
 }
 
-/** Variant 1: Load image data and call PesdkServer#setImage directly **/
+<<<<<<< Updated upstream
+// Load image data and call PesdkServer#setImage directly
 const result = PesdkServer.ImageLoader.load('URI TO INPUT IMAGE')
+=======
+/** Variant 1: Load image data and call PesdkServer#setImage directly **/
+const result = PesdkServer.SDK.Loaders.ImageLoader.load('URI TO INPUT IMAGE')
+>>>>>>> Stashed changes
   .then((inputImage) => {
     pesdkServer.setImage(inputImage)
     pesdkServer.render(configuration) // Apply the serialization to the input image
   })
-
-/** Variant 2: Update image uri in serialization file **/
-// serialization.image |= {}
-// serialization.image.uri = 'URI TO INPUT IMAGE'
-// const result = pesdkServer.render(serialization, uri) // Apply the serialization to the input image
 
 // Finally wait for the promise to be resolved and process the resulting output image buffer
 result.then((outputImageBuffer) => {
