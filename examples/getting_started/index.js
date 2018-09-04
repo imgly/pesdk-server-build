@@ -32,13 +32,8 @@ const configuration = {
   }
 }
 
-<<<<<<< Updated upstream
 // Load image data and call PesdkServer#setImage directly
-const result = PesdkServer.ImageLoader.load('URI TO INPUT IMAGE')
-=======
-/** Variant 1: Load image data and call PesdkServer#setImage directly **/
 const result = PesdkServer.SDK.Loaders.ImageLoader.load('URI TO INPUT IMAGE')
->>>>>>> Stashed changes
   .then((inputImage) => {
     pesdkServer.setImage(inputImage)
     pesdkServer.render(configuration) // Apply the serialization to the input image
