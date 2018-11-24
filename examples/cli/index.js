@@ -57,7 +57,8 @@ const pesdkConfig = {
     preferredRenderer: preferredRenderer,
     export: {
       format: mimeType,
-      type: PhotoEditorServer.SDK.RenderType.BUFFER
+      type: PhotoEditorServer.SDK.RenderType.BUFFER,
+      quality: 1.0
     }
   },
   assets: {
