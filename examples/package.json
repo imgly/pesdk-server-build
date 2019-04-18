@@ -2,7 +2,7 @@
   "name": "pesdk-server-examples",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:remake": "cross-env CI=1 react-scripts-ts test --env=jsdom"
   },
   "author": "PhotoEditor SDK <contact@photoeditorsdk.com>",
   "license": "ISC",
