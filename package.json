@@ -1,6 +1,6 @@
 {
   "name": "photoeditorsdk-server",
-  "version": "4.18.2",
+  "version": "4.18.3",
   "description": "The most comprehensive photo editor SDK for Server Applications based on NodeJs",
   "main": "index.js",
   "repository": {
@@ -20,7 +20,7 @@
   "author": "PhotoEditorSDK (img.ly GmbH) <contact@img.ly>",
   "license": "SEE LICENSE IN LICENSE.md",
   "dependencies": {
-    "canvas": "^2.1.0",
+    "canvas": "^2.4.1",
     "gl": "^4.0.4",
     "request": "^2.83.0",
     "chalk": "^2.4.1"
