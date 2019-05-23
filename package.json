@@ -1,6 +1,6 @@
 {
   "name": "photoeditorsdk-server",
-  "version": "4.18.4",
+  "version": "4.18.5",
   "description": "The most comprehensive photo editor SDK for Server Applications based on NodeJs",
   "main": "index.js",
   "repository": {
