@@ -8,7 +8,7 @@ It contains the most important photo editing tools such as;
 Auto-Enhance, Crop, Rotate, Focus, Brightness, Contrast, Saturation, and more.
 It also features state-of-the-art photo filters, designed and calibrated with a lot of love.
 
-Visit [our website](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Server-NodeJS) for tutorials on how to integrate and customize the editor.
+Visit [our website](https://www.photoeditorsdk.com) for tutorials on how to integrate and customize the editor.
 
 ## Setup Instructions
 
@@ -31,17 +31,17 @@ $ npm install
 A tutorial on how to deploy the PhotoEditor SDK Server to AWS EC2 using WebGL or Canvas is available [here](AWS.md).
 
 ## Documentation
-Visit our [docs](https://docs.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Server-NodeJS)
+Visit our [docs](https://docs.photoeditorsdk.com)
 
 ## Examples
-Visit our [website](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Server-NodeJS).
+Visit our [website](https://www.photoeditorsdk.com/).
 
 
 ## License
 Please see [LICENSE](https://github.com/imgly/pesdk-server-build/blob/master/LICENSE.md) for licensing details.
 
 ## Authors and Contributors
-Made 2013-2019 by [img.ly](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Server-NodeJS)
+Made 2013-2019 by [img.ly](https://www.photoeditorsdk.com)
 
 ## Support and License
-Use our [service desk](https://support.photoeditorsdk.com) for bug reports or support requests. To request a commercial license, please use the [license request form](https://account.photoeditorsdk.com/pricing/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Server-NodeJS) on our website.
+Use our [service desk](https://support.photoeditorsdk.com) for bug reports or support requests. To request a commercial license, please use the [license request form](https://www.photoeditorsdk.com/pricing) on our website.
