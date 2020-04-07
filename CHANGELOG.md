@@ -1,3 +1,9 @@
+# 4.23.0
+
+## Added
+
+*   [[PESDK-5460](https://imglysdk.atlassian.net/browse/PESDK-5460)] - Made it possible to change the export options in the server export function
+
 # 4.22.3
 
 ## Fixed
