@@ -1,3 +1,26 @@
+# 4.24.2
+
+## Fixed
+
+*   Fixed the exif orientation based on endianness of the exif information
+
+# 4.24.1
+
+## Fixed
+
+*   Fixed an issue with the focus rendering for the canvas renderer
+
+# 4.24.0
+
+## Fixed
+
+*   Fixed v4 transform flip 90 270
+*   Fixed Serializer to store correct font size
+*   Fixed Deserialization of Text font size
+
+## Changed
+*   Doubled the text design render resolution
+
 # 4.23.0
 
 ## Added
