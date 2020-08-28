@@ -1,3 +1,10 @@
+# 4.24.3
+
+## Fixed
+
+*   Fixed the missing overlay after exporting the image
+*   Fixed the image export in IE11 for type blob and ms-blob
+
 # 4.24.2
 
 ## Fixed
