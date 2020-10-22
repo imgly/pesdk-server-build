@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./js/PhotoEditorSDK.Server.min')
+  module.exports = require('./cjs/PhotoEditorSDK.Server.min')
 } else {
-  module.exports = require('./js/PhotoEditorSDK.Server')
+  module.exports = require('./cjs/PhotoEditorSDK.Server')
 }
