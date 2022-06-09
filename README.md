@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="http://static.photoeditorsdk.com/logo.png" alt="PhotoEditor SDK Logo"/>
+  <img src="https://img.ly/static/logo.png" alt="PhotoEditor SDK Logo"/>
 </p>
 
 ## PhotoEditor SDK for the Server/NodeJS

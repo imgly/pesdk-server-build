@@ -1,3 +1,9 @@
+# 4.26.0
+
+## Added
+
+- Added support for Serializtion v3.12.0
+
 # 4.25.0
 
 ## Changed
@@ -1122,7 +1128,7 @@ specify it using the `apiKey` option.
 - Add an optional `Gamma correction` feature under `Adjustments`. Can be enabled using
   `editor: { tools: ['gamma'] }`.
 - Due to changes to our feature set, our serialization schema has been updated to version `1.0.1`.
-  The new `schema.json` can be found [here](http://static.photoeditorsdk.com/serialization/schema-1.0.1.json).
+  The new `schema.json` can be found [here](https://img.ly/static/serialization/schema-1.0.1.json).
 - Decrease brush step, making large brushes look smoother
 - Add output dimensions to crop control
 - Allow `dimensions` option for crop ratios, causing the resulting image to be exactly of the given
