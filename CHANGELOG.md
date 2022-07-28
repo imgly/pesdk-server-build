@@ -1,3 +1,11 @@
+# Unreleased
+
+# 4.26.1
+
+## Fixed
+
+- Fixed WebGL renderer returning an empty image 
+
 # 4.26.0
 
 ## Added

@@ -184,7 +184,8 @@ var init_serverUtils = __esm({
       const ctx = canvas.getContext("2d");
       ctx.drawImage(source, 0, 0);
       const imageData = ctx.getImageData(0, 0, image.width, image.height);
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, image.width, image.height, 0, gl.RGBA, gl.UNSIGNED_BYTE, imageData);
+      const pixels = new PixelArrayImage(image.width, image.height, imageData.data);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, image.width, image.height, 0, gl.RGBA, gl.UNSIGNED_BYTE, pixels.data);
     };
     serverUtils = {
       isSupported: () => true,
@@ -14052,7 +14053,7 @@ var init_sdk = __esm({
         });
         this._onOperationUpdate = this._onOperationUpdate.bind(this);
         this._onContextRestored = this._onContextRestored.bind(this);
-        this.version = "4.26.0";
+        this.version = "4.26.1";
         this[bd2("VG04Z1lHRndhVXRsZVdBZ2IzQjBhVzl1SUdkcGRtVnU=")] = true;
         this._preferredRenderer = preferredRenderer;
         this._options = __spreadProps(__spreadValues({}, options), {
@@ -14697,7 +14698,7 @@ var init_exports = __esm({
     init_operations();
     init_operation();
     init_sdk();
-    sdk_default.version = "4.26.0";
+    sdk_default.version = "4.26.1";
     sdk_default.Math = math_exports;
     sdk_default.Operations = operations_exports;
     sdk_default.Engine = engine_default;
