@@ -5992,7 +5992,7 @@ var init_base_texture = __esm({
     BaseTexture.LinearFilter = 1 /* Linear */;
     BaseTexture.BilinearFilter = 2 /* Bilinear */;
     BaseTexture.TrilinearFilter = 3 /* Trilinear */;
-    BaseTexture.DefaultMagFilter = 0 /* Nearest */;
+    BaseTexture.DefaultMagFilter = 1 /* Linear */;
     BaseTexture.DefaultMinFilter = 1 /* Linear */;
     BaseTexture.Repeat = 1 /* Repeat */;
     BaseTexture._id = 0;
@@ -14053,7 +14053,7 @@ var init_sdk = __esm({
         });
         this._onOperationUpdate = this._onOperationUpdate.bind(this);
         this._onContextRestored = this._onContextRestored.bind(this);
-        this.version = "4.26.1";
+        this.version = "4.27.0";
         this[bd2("VG04Z1lHRndhVXRsZVdBZ2IzQjBhVzl1SUdkcGRtVnU=")] = true;
         this._preferredRenderer = preferredRenderer;
         this._options = __spreadProps(__spreadValues({}, options), {
@@ -14183,9 +14183,9 @@ var init_sdk = __esm({
         });
         this.render();
       }
-      export(renderType = RenderType2.DATAURL, imageFormat = ImageFormat2.PNG, quality = 0.8, transparent = true) {
+      export(renderType = RenderType2.DATAURL, imageFormat = ImageFormat2.PNG, quality = 0.8, transparent = true, unsupported = false) {
         return this._cv(true).then(() => {
-          if (this.hasChanges()) {
+          if (this.hasChanges() && !unsupported) {
             this._t();
           }
           this._operationsStack.forEach((op) => {
@@ -14698,7 +14698,7 @@ var init_exports = __esm({
     init_operations();
     init_operation();
     init_sdk();
-    sdk_default.version = "4.26.1";
+    sdk_default.version = "4.27.0";
     sdk_default.Math = math_exports;
     sdk_default.Operations = operations_exports;
     sdk_default.Engine = engine_default;
@@ -22120,14 +22120,14 @@ var init_text_design_banderole = __esm({
       static get Small() {
         return new TextDesignBanderole({
           imagePath: "text-design/images/imgly_text_design_asset_banderole_small.png",
-          fontIdentifier: "imgly_font_campton_bold",
+          fontIdentifier: "imgly_font_outfit_bold",
           relativeInsets: new RectangleInsets(0.05, 0.2, 0.05, 0.2)
         });
       }
       static get Rectangle() {
         return new TextDesignBanderole({
           imagePath: "text-design/images/imgly_text_design_asset_black_background.png",
-          fontIdentifier: "imgly_font_campton_bold",
+          fontIdentifier: "imgly_font_outfit_bold",
           relativeInsets: new RectangleInsets(0.05, 0.05, 0.05, 0.05),
           needsImageSmoothingFix: true
         });
@@ -22521,7 +22521,7 @@ var init_text_design_blocks = __esm({
         return new TextDesignRowSingle({ words, width, attributes });
       }
     };
-    __publicField(TextDesignBlocks, "defaultFontIdentifiers", ["imgly_font_campton_bold"]);
+    __publicField(TextDesignBlocks, "defaultFontIdentifiers", ["imgly_font_outfit_bold"]);
     __publicField(TextDesignBlocks, "identifier", "imgly_text_design_blocks");
     __publicField(TextDesignBlocks, "defaultBanderoles", [
       TextDesignBanderole.Rectangle,
@@ -22888,7 +22888,7 @@ var init_text_design_celebrate = __esm({
       }
       _createSingleRow(rowType, words, width, attributes) {
         const fontIdentifier = attributes.getFontIdentifier();
-        const updatedWords = fontIdentifier === "imgly_font_amberlight" || fontIdentifier === "imgly_font_handycheera_regular" ? new Words().set(words.getLowerCase()) : words;
+        const updatedWords = fontIdentifier === "imgly_font_allison_regular" || fontIdentifier === "imgly_font_handycheera_regular" ? new Words().set(words.getLowerCase()) : words;
         switch (rowType) {
           case _TextDesignCelebrate.RowType.Single:
             return new TextDesignRowSingle({
@@ -23093,7 +23093,7 @@ var init_text_design_celebrate_simple = __esm({
     };
     __publicField(TextDesignCelebrateSimple, "identifier", "imgly_text_design_celebrate_simple");
     __publicField(TextDesignCelebrateSimple, "defaultFontIdentifiers", [
-      "imgly_font_amberlight",
+      "imgly_font_allison_regular",
       "imgly_font_rasa_regular",
       "imgly_font_rasa_500"
     ]);
@@ -24077,7 +24077,7 @@ var init_text_design_masked = __esm({
       }
     };
     TextDesignMasked = _TextDesignMasked;
-    __publicField(TextDesignMasked, "defaultFontIdentifiers", ["imgly_font_galano_grotesque_bold"]);
+    __publicField(TextDesignMasked, "defaultFontIdentifiers", ["imgly_font_lexend_bold"]);
     __publicField(TextDesignMasked, "Alignment", {
       Left: "left",
       Center: "center",
@@ -24132,7 +24132,7 @@ var init_text_design_masked_badge = __esm({
         return row;
       }
     };
-    __publicField(TextDesignMaskedBadge, "defaultFontIdentifiers", ["imgly_font_campton_bold"]);
+    __publicField(TextDesignMaskedBadge, "defaultFontIdentifiers", ["imgly_font_outfit_bold"]);
     __publicField(TextDesignMaskedBadge, "identifier", "imgly_text_design_masked_badge");
     __publicField(TextDesignMaskedBadge, "ValidAlignments", [TextDesignMasked.Alignment.Center]);
     TextDesignMaskedBadge.prototype.availableOptions = __spreadProps(__spreadValues({}, TextDesignMasked.prototype.availableOptions), {
@@ -24484,7 +24484,7 @@ var init_text_design_sunshine = __esm({
         this._INVALID_FONTS_IF_LESS_THEN_5_CHARS = ["imgly_font_montserrat_light"];
         this._INVALID_FONTS_IF_LESS_THEN_4_CHARS = [
           "imgly_font_montserrat_light",
-          "imgly_font_wolesbro"
+          "imgly_font_cookie_regular"
         ];
         this._lineCount = 0;
         this._decorativeRowCreated = false;
@@ -24526,7 +24526,7 @@ var init_text_design_sunshine = __esm({
         const fontIdentifier = attributes.getFontIdentifier();
         let modifiedWords = words;
         switch (fontIdentifier) {
-          case "imgly_font_wolesbro":
+          case "imgly_font_cookie_regular":
             modifiedWords = new Words().set(words.getLowerCase());
             break;
           case "imgly_font_permanent_marker":
@@ -24581,8 +24581,8 @@ var init_text_design_sunshine = __esm({
     TextDesignSunshine = _TextDesignSunshine;
     __publicField(TextDesignSunshine, "defaultFontIdentifiers", [
       "imgly_font_permanent_marker",
-      "imgly_font_wolesbro",
-      "imgly_font_wolesbro",
+      "imgly_font_cookie_regular",
+      "imgly_font_cookie_regular",
       "imgly_font_montserrat_light"
     ]);
     __publicField(TextDesignSunshine, "identifier", "imgly_text_design_sunshine");
@@ -24657,8 +24657,8 @@ var init_text_design_particles = __esm({
     TextDesignParticles = _TextDesignParticles;
     __publicField(TextDesignParticles, "defaultFontIdentifiers", [
       "imgly_font_permanent_marker",
-      "imgly_font_wolesbro",
-      "imgly_font_wolesbro",
+      "imgly_font_cookie_regular",
+      "imgly_font_cookie_regular",
       "imgly_font_montserrat_light"
     ]);
     __publicField(TextDesignParticles, "identifier", "imgly_text_design_particles");
@@ -24727,7 +24727,7 @@ var init_text_design_rotated = __esm({
         return [firstRow, ...elements, lastRow];
       }
     };
-    __publicField(TextDesignRotated, "defaultFontIdentifiers", ["imgly_font_campton_bold"]);
+    __publicField(TextDesignRotated, "defaultFontIdentifiers", ["imgly_font_outfit_bold"]);
     __publicField(TextDesignRotated, "identifier", "imgly_text_design_rotated");
     TextDesignRotated.prototype.availableOptions = __spreadProps(__spreadValues({}, TextDesign.prototype.availableOptions), {
       fontIdentifiers: {
@@ -24796,8 +24796,8 @@ var init_text_design_watercolor = __esm({
     };
     __publicField(TextDesignWatercolor, "defaultFontIdentifiers", [
       "imgly_font_permanent_marker",
-      "imgly_font_wolesbro",
-      "imgly_font_wolesbro"
+      "imgly_font_cookie_regular",
+      "imgly_font_cookie_regular"
     ]);
     __publicField(TextDesignWatercolor, "identifier", "imgly_text_design_watercolor");
     TextDesignWatercolor.prototype.availableOptions = __spreadProps(__spreadValues({}, TextDesignMaskedSpeechBubble.prototype.availableOptions), {
@@ -26024,23 +26024,6 @@ var init_fonts = __esm({
         ]
       },
       {
-        fontFamily: "Campton Book",
-        variations: [
-          {
-            identifier: "imgly_font_campton_bold",
-            fontWeight: "bold",
-            fontStyle: "normal",
-            filePath: "fonts/imgly_font_campton_bold.woff",
-            provider: "file",
-            textMetrics: {
-              unitsPerEm: 1e3,
-              ascender: 770,
-              descender: -294
-            }
-          }
-        ]
-      },
-      {
         fontFamily: "Carter",
         variations: [
           {
@@ -26087,23 +26070,6 @@ var init_fonts = __esm({
               unitsPerEm: 1e3,
               ascender: 935,
               descender: -265
-            }
-          }
-        ]
-      },
-      {
-        fontFamily: "Galano Grotesque",
-        variations: [
-          {
-            identifier: "imgly_font_galano_grotesque_bold",
-            fontWeight: "bold",
-            fontStyle: "normal",
-            filePath: "fonts/imgly_font_galano_grotesque_bold.woff",
-            provider: "file",
-            textMetrics: {
-              unitsPerEm: 1e3,
-              ascender: 800,
-              descender: -200
             }
           }
         ]
@@ -26438,6 +26404,42 @@ var init_fonts = __esm({
             }
           }
         ]
+      },
+      {
+        fontFamily: "Lexend",
+        variations: [
+          {
+            identifier: "imgly_font_lexend_bold",
+            fontWeight: "bold",
+            fontStyle: "normal",
+            provider: "file",
+            filePath: "fonts/imgly_font_lexend_bold.ttf",
+            default: true,
+            textMetrics: {
+              unitsPerEm: 1e3,
+              ascender: 1e3,
+              descender: -250
+            }
+          }
+        ]
+      },
+      {
+        fontFamily: "Outfit",
+        variations: [
+          {
+            identifier: "imgly_font_outfit_bold",
+            fontWeight: "bold",
+            fontStyle: "normal",
+            provider: "file",
+            filePath: "fonts/imgly_font_outfit_bold.ttf",
+            default: true,
+            textMetrics: {
+              unitsPerEm: 1e3,
+              ascender: 1e3,
+              descender: -260
+            }
+          }
+        ]
       }
     ];
   }
@@ -26483,24 +26485,6 @@ var init_text_design_fonts = __esm({
         ]
       },
       {
-        fontFamily: "Amberlight",
-        variations: [
-          {
-            identifier: "imgly_font_amberlight",
-            fontWeight: "normal",
-            fontStyle: "normal",
-            provider: "file",
-            filePath: "fonts/imgly_font_amberlight.woff",
-            default: true,
-            textMetrics: {
-              unitsPerEm: 1e3,
-              ascender: 750,
-              descender: -250
-            }
-          }
-        ]
-      },
-      {
         fontFamily: "Bungee Inline",
         variations: [
           {
@@ -26514,41 +26498,6 @@ var init_text_design_fonts = __esm({
               unitsPerEm: 1e3,
               ascender: 860,
               descender: -140
-            }
-          }
-        ]
-      },
-      {
-        fontFamily: "Campton Book",
-        variations: [
-          {
-            identifier: "imgly_font_campton_bold",
-            fontWeight: "bold",
-            provider: "file",
-            filePath: "fonts/imgly_font_campton_bold.woff",
-            default: true,
-            textMetrics: {
-              unitsPerEm: 1e3,
-              ascender: 770,
-              descender: -294
-            }
-          }
-        ]
-      },
-      {
-        fontFamily: "Galano Grotesque",
-        variations: [
-          {
-            identifier: "imgly_font_galano_grotesque_bold",
-            fontWeight: "bold",
-            fontStyle: "normal",
-            provider: "file",
-            filePath: "fonts/imgly_font_galano_grotesque_bold.woff",
-            default: true,
-            textMetrics: {
-              unitsPerEm: 1e3,
-              ascender: 800,
-              descender: -200
             }
           }
         ]
@@ -26786,18 +26735,73 @@ var init_text_design_fonts = __esm({
         ]
       },
       {
-        fontFamily: "Wolesbro",
+        fontFamily: "Allison",
         variations: [
           {
-            identifier: "imgly_font_wolesbro",
+            identifier: "imgly_font_allison_regular",
             fontWeight: "normal",
             fontStyle: "normal",
             provider: "file",
-            filePath: "fonts/imgly_font_wolesbro.woff",
+            filePath: "fonts/imgly_font_allison_regular.ttf",
+            default: true,
             textMetrics: {
               unitsPerEm: 1e3,
-              ascender: 925,
-              descender: -575
+              ascender: 890,
+              descender: -380
+            }
+          }
+        ]
+      },
+      {
+        fontFamily: "Cookie",
+        variations: [
+          {
+            identifier: "imgly_font_cookie_regular",
+            fontWeight: "normal",
+            fontStyle: "normal",
+            provider: "file",
+            filePath: "fonts/imgly_font_cookie_regular.ttf",
+            default: true,
+            textMetrics: {
+              unitsPerEm: 1e3,
+              ascender: 789,
+              descender: -320
+            }
+          }
+        ]
+      },
+      {
+        fontFamily: "Lexend",
+        variations: [
+          {
+            identifier: "imgly_font_lexend_bold",
+            fontWeight: "bold",
+            fontStyle: "normal",
+            provider: "file",
+            filePath: "fonts/imgly_font_lexend_bold.ttf",
+            default: true,
+            textMetrics: {
+              unitsPerEm: 1e3,
+              ascender: 1e3,
+              descender: -250
+            }
+          }
+        ]
+      },
+      {
+        fontFamily: "Outfit",
+        variations: [
+          {
+            identifier: "imgly_font_outfit_bold",
+            fontWeight: "bold",
+            fontStyle: "normal",
+            provider: "file",
+            filePath: "fonts/imgly_font_outfit_bold.ttf",
+            default: true,
+            textMetrics: {
+              unitsPerEm: 1e3,
+              ascender: 1e3,
+              descender: -260
             }
           }
         ]
@@ -27305,7 +27309,11 @@ var init_legacyFontHandler = __esm({
       imgly_font_perfograma: "imgly_font_codystar",
       imgly_font_panton_black_caps: "imgly_font_roboto_black",
       imgly_font_panton_light_caps: "imgly_font_roboto_light",
-      imgly_font_summer_font_light: "imgly_font_sue_ellen_francisco"
+      imgly_font_summer_font_light: "imgly_font_sue_ellen_francisco",
+      imgly_font_wolesbro: "imgly_font_cookie_regular",
+      imgly_font_campton_bold: "imgly_font_outfit_bold",
+      imgly_font_galano_grotesque_bold: "imgly_font_lexend_bold",
+      imgly_font_amberlight: "imgly_font_allison_regular)"
     };
     legacyFontHandler = (fontId, displayWarning = false) => {
       if (legacyFontIdentifierMap[fontId]) {
@@ -31195,19 +31203,6 @@ var metadata = [
     }
   },
   {
-    identifier: "imgly_font_campton_bold",
-    fontFamily: "Campton Book",
-    fontWeight: "bold",
-    fontStyle: "normal",
-    fontURI: "./fonts/imgly_font_campton_bold.woff",
-    format: "woff",
-    textMetrics: {
-      unitsPerEm: 1e3,
-      ascender: 770,
-      descender: -294
-    }
-  },
-  {
     identifier: "imgly_font_carter_one",
     fontFamily: "Carter One",
     fontWeight: "normal",
@@ -31231,19 +31226,6 @@ var metadata = [
       unitsPerEm: 1024,
       ascender: 953,
       descender: -255
-    }
-  },
-  {
-    identifier: "imgly_font_galano_grotesque_bold",
-    fontFamily: "Galano Grotesque",
-    fontWeight: "bold",
-    fontStyle: "normal",
-    fontURI: "./fonts/imgly_font_galano_grotesque_bold.woff",
-    format: "woff",
-    textMetrics: {
-      unitsPerEm: 1e3,
-      ascender: 800,
-      descender: -200
     }
   },
   {
@@ -31522,19 +31504,6 @@ var metadata = [
     }
   },
   {
-    identifier: "imgly_font_amberlight",
-    fontFamily: "Amberlight",
-    fontWeight: "normal",
-    fontStyle: "normal",
-    fontURI: "./fonts/imgly_font_amberlight.woff",
-    format: "woff",
-    textMetrics: {
-      unitsPerEm: 1e3,
-      ascender: 750,
-      descender: -250
-    }
-  },
-  {
     identifier: "imgly_font_montserrat_light",
     fontFamily: "Montserrat Light",
     googleFamily: "Montserrat",
@@ -31666,16 +31635,55 @@ var metadata = [
     }
   },
   {
-    identifier: "imgly_font_wolesbro",
-    fontFamily: "Wolesbro",
+    identifier: "imgly_font_allison_regular",
+    fontFamily: "Allison",
     fontWeight: "normal",
     fontStyle: "normal",
-    fontURI: "./fonts/imgly_font_wolesbro.woff",
-    format: "woff",
+    fontURI: "./fonts/imgly_font_allison_regular.ttf",
+    format: "truetype",
     textMetrics: {
       unitsPerEm: 1e3,
-      ascender: 925,
-      descender: -575
+      ascender: 890,
+      descender: -380
+    }
+  },
+  {
+    identifier: "imgly_font_cookie_regular",
+    fontFamily: "Cookie",
+    fontWeight: "normal",
+    fontStyle: "normal",
+    fontURI: "./fonts/imgly_font_cookie_regular.ttf",
+    format: "truetype",
+    textMetrics: {
+      unitsPerEm: 1e3,
+      ascender: 789,
+      descender: -320
+    }
+  },
+  {
+    identifier: "imgly_font_lexend_bold",
+    fontFamily: "Lexend",
+    fontWeight: "bold",
+    fontStyle: "normal",
+    fontURI: "./fonts/imgly_font_lexend_bold.ttf",
+    format: "truetype",
+    textMetrics: {
+      unitsPerEm: 1e3,
+      ascender: 1e3,
+      descender: -250
+    }
+  },
+  {
+    identifier: "imgly_font_outfit_bold",
+    fontFamily: "Outfit",
+    fontWeight: "bold",
+    fontStyle: "normal",
+    fontURI: "./fonts/imgly_font_outfit_bold.ttf",
+    format: "truetype",
+    textMetrics: {
+      unitsPerEm: 1e3,
+      ascender: 1e3,
+      descender: -260
     }
   }
 ];
